@@ -11,42 +11,42 @@ import org.testng.annotations.BeforeTest;
 
 public class TestNGBaseClass {
 
-	 @BeforeSuite
+	 @BeforeSuite(alwaysRun = true)
 	  public void beforeSuite() {
 		  System.out.println("This is Before Suit");
 	  }
 	  
-	  @AfterSuite
+	  @AfterSuite(alwaysRun = true)
 	  public void afterSuite() {
 		  System.out.println("This is After Suit");
 	  }
 	  
-	  @BeforeTest
+	  @BeforeTest(alwaysRun = true)
 	  public void befoeTest() {
 		  System.out.println("This is Before Test");
 	  }
 	  
-	  @AfterTest
+	  @AfterTest(alwaysRun = true)
 	  public void afterTest() {
 		  System.out.println("This is After Test");
 	  }
 	  
-	  @BeforeClass
+	  @BeforeClass(alwaysRun = true)
 	  public void beforeClass() {
 		  System.out.println("This is Before Class");
 	  }
 	  
-	  @AfterClass
+	  @AfterClass(alwaysRun = true)
 	  public void afterClass() {
 		  System.out.println("This is After Class");
 	  }
 	  
-	  @BeforeMethod
+	  @BeforeMethod(alwaysRun = true)
 	  public void beforeMethod() {
 		  System.out.println("This is Before Method");
 	  }
 	  
-	  @AfterMethod
+	  @AfterMethod(alwaysRun = true)
 	  public void afterMethod() {
 		  System.out.println("This is After Method");
 	  }

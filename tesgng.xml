@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <suite parallel="false" name="Suite">
-  <test name="Test">
+  <test name="Test" parallel="methods" threadCount="4">
+  	<parameter name="UserName" value="Admin"/>
+  	<parameter name="Password" value="Admin123"/>
     <classes>
-      <class name="org.openms.demo.test.TestNGTest"/>
+      <class name="org.openms.demo.test.OpenMrsTestNGTest2">
+      	<methods>
+      		<include name="registerPatient"/>
+      		<include name="findPatient"/>
+      		<include name="activateVisitsAndAddAttachment"/>
+      		<include name="deletePatient"/>
+      	</methods>
+      </class>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
