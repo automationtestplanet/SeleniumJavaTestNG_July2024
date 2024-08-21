@@ -1,8 +1,11 @@
 package org.openms.demo.test;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openms.demo.pageobjects.Commons;
+import org.openms.demo.pageobjects.ExcelUtils;
 import org.openms.demo.pageobjects.FindPatientPage;
 import org.openms.demo.pageobjects.HomePage;
 import org.openms.demo.pageobjects.LoginPage;
@@ -19,6 +22,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
 public class OpenMrsBaseTest {
@@ -64,6 +68,7 @@ public class OpenMrsBaseTest {
 	@AfterMethod(alwaysRun = true)
 	public void afterMethod() {
 		try {
+			Thread.sleep(5000);
 			homePage.clickLogout();
 			Thread.sleep(5000);
 			Assert.assertTrue(loginPage.verifyLoginPage());
@@ -89,6 +94,12 @@ public class OpenMrsBaseTest {
 	@AfterSuite(alwaysRun = true)
 	public void afterSuite() {
 		System.out.println("Test Ended");
+	}
+	
+	@DataProvider(name="RegisterPatientData")
+	public Iterator<String[]> registerPatientData() {
+		List<String[]> testData = ExcelUtils.readDataFromExcel(System.getProperty("user.dir")+Commons.getPropertyInTestProperties("test.data.excel.file"), "RegisterPatientDetails");
+		return testData.iterator();
 	}
 
 }

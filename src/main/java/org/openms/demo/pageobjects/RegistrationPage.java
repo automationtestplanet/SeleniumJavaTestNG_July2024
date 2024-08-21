@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class RegistrationPage extends BasePage{
+public class RegistrationPage extends BasePage {
 
 	public RegistrationPage(WebDriver driver) {
 		super(driver);
 	}
-	
+
 	public boolean verifyRegisterPatientPage(String pageName) {
 		return driver.findElement(By.xpath("//h2[normalize-space(text())='" + pageName + "']")).isDisplayed();
 	}
@@ -61,6 +61,15 @@ public class RegistrationPage extends BasePage{
 		driver.findElement(By.id("postalCode")).sendKeys(pinCode);
 	}
 
+	public void setAddress(String address) {
+		String[] allAddressFields = address.split(",");
+		driver.findElement(By.id("address1")).sendKeys(allAddressFields[0].trim());
+		driver.findElement(By.id("cityVillage")).sendKeys(allAddressFields[1].trim());
+		driver.findElement(By.id("stateProvince")).sendKeys(allAddressFields[2].trim());
+		driver.findElement(By.id("country")).sendKeys(allAddressFields[3].trim());
+		driver.findElement(By.id("postalCode")).sendKeys(allAddressFields[4].trim());
+	}
+
 	public void setPhoneNumber(String phoneNumer) {
 		driver.findElement(By.name("phoneNumber")).sendKeys(phoneNumer);
 	}
@@ -76,6 +85,17 @@ public class RegistrationPage extends BasePage{
 
 		return actualName.contains(name) && actualGender.contains(gender) && actualBirthDate.contains(dateOfBirth)
 				&& actualAddress.contains(city) && actualPhoneNumber.contains(phoneNumber);
+	}
+
+	public boolean verfyConfirmPage(String name, String gender, String dateOfBirth, String phoneNumber) {
+		String actualName = driver.findElement(By.xpath("//span[text()='Name: ']//parent::p")).getText().trim();
+		String actualGender = driver.findElement(By.xpath("//span[text()='Gender: ']//parent::p")).getText().trim();
+		String actualBirthDate = driver.findElement(By.xpath("//span[text()='Birthdate: ']//parent::p")).getText()
+				.trim();
+		String actualPhoneNumber = driver.findElement(By.xpath("//span[text()='Phone Number: ']//parent::p")).getText()
+				.trim();
+		return actualName.contains(name) && actualGender.contains(gender) && actualBirthDate.contains(dateOfBirth)
+				&& actualPhoneNumber.contains(phoneNumber);
 	}
 
 	public void clickConfirm() {

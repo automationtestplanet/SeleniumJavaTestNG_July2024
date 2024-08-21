@@ -1,69 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-08-20T09:36:40 IST" name="Suite" finished-at="2024-08-20T09:38:25 IST" duration-ms="105098">
+  <suite started-at="2024-08-21T09:54:02 IST" name="Suite" finished-at="2024-08-21T09:56:22 IST" duration-ms="140227">
     <groups>
     </groups>
-    <test started-at="2024-08-20T09:36:40 IST" name="Test" finished-at="2024-08-20T09:38:25 IST" duration-ms="105098">
-      <class name="org.openms.demo.test.OpenMrsKeywordDrivenFramework">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:36:40 IST" name="beforeSuite" finished-at="2024-08-20T09:36:40 IST" duration-ms="19" status="PASS">
+    <test started-at="2024-08-21T09:54:02 IST" name="Test" finished-at="2024-08-21T09:56:22 IST" duration-ms="140227">
+      <class name="org.openms.demo.test.OpenMrsDataDrivenFramework">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:54:02 IST" name="beforeSuite" finished-at="2024-08-21T09:54:02 IST" duration-ms="17" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="befoeTest()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:36:40 IST" name="befoeTest" finished-at="2024-08-20T09:37:37 IST" duration-ms="57419" status="PASS">
+        <test-method is-config="true" signature="befoeTest()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:54:02 IST" name="befoeTest" finished-at="2024-08-21T09:54:24 IST" duration-ms="21440" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- befoeTest -->
-        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:37:37 IST" name="beforeClass" finished-at="2024-08-20T09:37:37 IST" duration-ms="114" status="PASS">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:54:24 IST" name="beforeClass" finished-at="2024-08-21T09:54:24 IST" duration-ms="100" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="registerPatient(java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:37:37 IST" name="registerPatient" finished-at="2024-08-20T09:37:37 IST" duration-ms="0" status="FAIL">
-          <exception class="org.testng.TestNGException">
-            <message>
-              <![CDATA[
-Cannot inject @Test annotated Method [registerPatient] with [class java.lang.String, class java.lang.String].
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.testng.TestNGException: 
-Cannot inject @Test annotated Method [registerPatient] with [class java.lang.String, class java.lang.String].
-For more information on native dependency injection please refer to https://testng.org/doc/documentation-main.html#native-dependency-injection
-at org.testng.internal.Parameters.checkParameterTypes(Parameters.java:439)
-at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:353)
-at org.testng.internal.Parameters.createParameters(Parameters.java:708)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:884)
-at org.testng.internal.Parameters.handleParameters(Parameters.java:740)
-at org.testng.internal.ParameterHandler.handleParameters(ParameterHandler.java:59)
-at org.testng.internal.ParameterHandler.createParameters(ParameterHandler.java:38)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:791)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.testng.TestNGException -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:54:26 IST" name="beforeMethod" finished-at="2024-08-21T09:54:34 IST" duration-ms="8168" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Admin123]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Registration Desk]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="registerPatient(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:54:34 IST" name="registerPatient" data-provider="RegisterPatientData" finished-at="2024-08-21T09:55:07 IST" duration-ms="33206" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ramesh Babu, H]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Male]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[26, December, 2000]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Near HDFC bank\n S R Nagar,Hyderabad,Telanagana,India,500033]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[9876543210]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerPatient -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:37:37 IST" name="beforeMethod" finished-at="2024-08-20T09:37:51 IST" duration-ms="13797" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:55:07 IST" name="afterMethod" finished-at="2024-08-21T09:55:22 IST" duration-ms="14571" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:55:22 IST" name="beforeMethod" finished-at="2024-08-21T09:55:25 IST" duration-ms="2820" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -84,15 +96,42 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="findPatient()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:37:51 IST" name="findPatient" finished-at="2024-08-20T09:37:51 IST" duration-ms="5" status="PASS">
+        <test-method signature="registerPatient(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:55:25 IST" name="registerPatient" data-provider="RegisterPatientData" finished-at="2024-08-21T09:55:39 IST" duration-ms="14917" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Kishore Kumar, M]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Male]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10, November, 1998]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Near Icici bank\n HitechCity,Hyderabad,Telanagana,India,500033]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[9876543211]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- findPatient -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:37:51 IST" name="afterMethod" finished-at="2024-08-20T09:38:01 IST" duration-ms="9870" status="PASS">
+        </test-method> <!-- registerPatient -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:55:39 IST" name="afterMethod" finished-at="2024-08-21T09:55:52 IST" duration-ms="12083" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:01 IST" name="beforeMethod" finished-at="2024-08-20T09:38:04 IST" duration-ms="3152" status="PASS">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:55:52 IST" name="beforeMethod" finished-at="2024-08-21T09:55:57 IST" duration-ms="5945" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -113,56 +152,54 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="activateVisitsAndAddAttachment()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:04 IST" name="activateVisitsAndAddAttachment" finished-at="2024-08-20T09:38:04 IST" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- activateVisitsAndAddAttachment -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:04 IST" name="afterMethod" finished-at="2024-08-20T09:38:14 IST" duration-ms="9752" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:14 IST" name="beforeMethod" finished-at="2024-08-20T09:38:17 IST" duration-ms="2728" status="PASS">
+        <test-method signature="registerPatient(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:55:57 IST" name="registerPatient" data-provider="RegisterPatientData" finished-at="2024-08-21T09:56:09 IST" duration-ms="11894" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Admin]]>
+                <![CDATA[Kumar Raju, Ch]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Admin123]]>
+                <![CDATA[Male]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Registration Desk]]>
+                <![CDATA[17, July, 2002]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Near SBI bank\n Kukatpally,Hyderabad,Telanagana,India,500033]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[9876543212]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="deletePatient()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:17 IST" name="deletePatient" finished-at="2024-08-20T09:38:17 IST" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- deletePatient -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:17 IST" name="afterMethod" finished-at="2024-08-20T09:38:24 IST" duration-ms="7069" status="PASS">
+        </test-method> <!-- registerPatient -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:56:09 IST" name="afterMethod" finished-at="2024-08-21T09:56:22 IST" duration-ms="12179" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:24 IST" name="afterClass" finished-at="2024-08-20T09:38:24 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:56:22 IST" name="afterClass" finished-at="2024-08-21T09:56:22 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:24 IST" name="afterTest" finished-at="2024-08-20T09:38:25 IST" duration-ms="984" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:56:22 IST" name="afterTest" finished-at="2024-08-21T09:56:22 IST" duration-ms="927" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:org.openms.demo.test.OpenMrsKeywordDrivenFramework@2c35e847]" started-at="2024-08-20T09:38:25 IST" name="afterSuite" finished-at="2024-08-20T09:38:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:org.openms.demo.test.OpenMrsDataDrivenFramework@4803b726]" started-at="2024-08-21T09:56:23 IST" name="afterSuite" finished-at="2024-08-21T09:56:23 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- org.openms.demo.test.OpenMrsKeywordDrivenFramework -->
+      </class> <!-- org.openms.demo.test.OpenMrsDataDrivenFramework -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

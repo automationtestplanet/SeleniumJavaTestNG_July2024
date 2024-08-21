@@ -17,7 +17,7 @@ public class OpenMrsKeywordDrivenFramework extends OpenMrsBaseTest {
 		registrationPage.clickNextButton();
 		registrationPage.selectGenderByVisibleText("Male");
 		registrationPage.clickNextButton();
-		registrationPage.setDateOfBirth("1,January,1990");
+		registrationPage.setDateOfBirth("1, January, 1990");
 		registrationPage.clickNextButton();
 		registrationPage.setAddress("Do.No - 8/168, S R Nagar", "Hyderabad", "Telangana", "India", "500038");
 		registrationPage.clickNextButton();
@@ -25,7 +25,7 @@ public class OpenMrsKeywordDrivenFramework extends OpenMrsBaseTest {
 		registrationPage.clickNextButton();
 		registrationPage.clickNextButton();
 		Assert.assertTrue(
-				registrationPage.verfyConfirmPage("Ganesh, M", "Male", "1,January,1990", "Hyderabad", "9876543210"),
+				registrationPage.verfyConfirmPage("Ganesh, M", "Male", "1, January, 1990", "Hyderabad", "9876543210"),
 				"Register details are not displaying properly, Cancelling the register");
 		registrationPage.clickConfirm();
 		Assert.assertTrue(patientDeailsPage.verifyRegisteredPatientDetails("Ganesh"));

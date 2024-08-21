@@ -32,7 +32,6 @@ public class PatientDetailsPage extends BasePage {
 	@FindBy(xpath = "//div[@class='action-section']//h3[text()='Current Visit Actions']//following-sibling::li//div[contains(text(),'End Visit')]//ancestor::a[contains(@id,'endVisit')]|//div[@class='visit-actions active-visit']/a[contains(@href,'EndVisit')]")
 	WebElement endVisitsLinkElement;
 
-	
 //	@FindBys({
 //	@FindBy(xpath = "//div[@class='action-section']//h3[text()='Current Visit Actions']//following-sibling::li//div[contains(text(),'Attachments')]//ancestor::a"),
 //	@FindBy(xpath = "//div[@class='visit-actions active-visit']/a[contains(@id,'attachments')]")
@@ -66,6 +65,11 @@ public class PatientDetailsPage extends BasePage {
 				.findElement(By
 						.xpath("//em[text()='Given']//preceding-sibling::span[normalize-space(text())='" + name + "']"))
 				.isDisplayed();
+	}
+
+	public boolean verifyRegisteredPatientName(String name) {
+		return driver.findElement(By.xpath("//em[text()='Given']//preceding-sibling::span")).getText().trim()
+				.contains(name.split(",")[0].trim());
 	}
 
 	public String getPatientId() {
