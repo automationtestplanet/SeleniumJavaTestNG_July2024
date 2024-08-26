@@ -1,5 +1,6 @@
 package org.openms.demo.test;
 
+import java.lang.reflect.Method;
 import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -100,6 +101,11 @@ public class OpenMrsBaseTest {
 	public Iterator<String[]> registerPatientData() {
 		List<String[]> testData = ExcelUtils.readDataFromExcel(System.getProperty("user.dir")+Commons.getPropertyInTestProperties("test.data.excel.file"), "RegisterPatientDetails");
 		return testData.iterator();
+	}
+	
+	@DataProvider(name="TestDataProvider")
+	public Iterator<Object[]> testDataProvider(Method method){		
+		return ExcelUtils.readHybridDrivenDataFromExcel(System.getProperty("user.dir")+Commons.getPropertyInTestProperties("test.data.excel.file"), "TestData", method.getName());
 	}
 
 }

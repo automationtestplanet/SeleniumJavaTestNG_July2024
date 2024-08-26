@@ -6,7 +6,7 @@
     <parameter name="Module" value="Registration Desk"/>
     <parameter name="Password" value="Admin123"/>
     <classes>
-      <class name="org.openms.demo.test.OpenMrsKeywordDrivenFramework">
+      <class name="org.openms.demo.test.OpenMrsHybridFramework">
         <methods>
           <include name="beforeSuite"/>
           <include name="befoeTest"/>
@@ -14,11 +14,11 @@
           <include name="afterMethod"/>
           <include name="afterSuite"/>
           <include name="afterTest"/>
-          <include name="registerPatient"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
+          <include name="findPatientTest" invocation-numbers="0 1 2"/>
         </methods>
-      </class> <!-- org.openms.demo.test.OpenMrsKeywordDrivenFramework -->
+      </class> <!-- org.openms.demo.test.OpenMrsHybridFramework -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

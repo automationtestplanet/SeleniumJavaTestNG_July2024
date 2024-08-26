@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+	<test name="Test">
+		<parameter name="UserName" value="Admin" />
+		<parameter name="Password" value="Admin123" />
+		<parameter name="Module" value="Registration Desk" />
+		<classes>
+			<class name="org.openms.demo.test.OpenMrsHybridFramework">
+				<methods>
+					<!--<include name="registerPatientTest" /> -->
+					<include name="findPatientTest" />
+					<!--  <include name="activateVisitsAndAddAttachmentTest" />
+					<include name="deletePatientTest" />-->
+				</methods>
+			</class>
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->
