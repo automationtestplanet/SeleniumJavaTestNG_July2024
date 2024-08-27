@@ -3,6 +3,7 @@ package org.openms.demo.test;
 import java.util.Map;
 
 import org.openms.demo.pageobjects.Commons;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,20 +18,26 @@ public class OpenMrsHybridFramework extends OpenMrsBaseTest {
 				"Register patient Page is not displayed");
 		registrationPage.setPatientName(testData.get("Name"));
 		registrationPage.clickNextButton();
+		commons.captureScreenshot();
 		registrationPage.selectGenderByVisibleText(testData.get("Gender"));
 		registrationPage.clickNextButton();
+		commons.captureScreenshot();
 		registrationPage.setDateOfBirth(testData.get("DateOfBirth"));
 		registrationPage.clickNextButton();
+		commons.captureScreenshot();
 		registrationPage.setAddress(testData.get("Address"));
 		registrationPage.clickNextButton();
+		commons.captureScreenshot();
 		registrationPage.setPhoneNumber(testData.get("PhoneNumber"));
 		registrationPage.clickNextButton();
 		registrationPage.clickNextButton();
+		commons.captureScreenshot();
 		Assert.assertTrue(
 				registrationPage.verfyConfirmPage(testData.get("Name"), testData.get("Gender"),
 						testData.get("DateOfBirth"), testData.get("PhoneNumber")),
 				"Register details are not displaying properly, Cancelling the register");
 		registrationPage.clickConfirm();
+		commons.captureScreenshot();
 		Assert.assertTrue(patientDeailsPage.verifyRegisteredPatientName(testData.get("Name")));
 		patientId = patientDeailsPage.getPatientId();
 		System.out.println(patientId);
@@ -38,12 +45,17 @@ public class OpenMrsHybridFramework extends OpenMrsBaseTest {
 	}
 
 	@Test(dataProvider = "TestDataProvider")
-	public void findPatientTest(Map<String, String> testData) {
+	public void findPatientTest(Map<String, String> testData) throws InterruptedException {
 		System.out.println("--------------------------------Find Patient--------------------------");
 		Assert.assertTrue(homePage.verifyTile("Find Patient Record"), "Find Patient Record Tile is not available");
 		homePage.clickTile("Find Patient Record");
 		Assert.assertTrue(findPatientPage.verifyFindPatientPage("Find Patient Record"),
 				"Find Patient page is not displayed");
+		JavascriptExecutor je = (JavascriptExecutor)driver;
+		je.executeScript("window.scroll(0,document.body.scrollHeight)");
+		Thread.sleep(5000);
+		je.executeScript("window.scroll(0,document.body.scrollTop)");
+		Thread.sleep(5000);
 		findPatientPage.setPatientIdInSearchFiled(testData.get("Name"));
 		findPatientPage.clickSearchedRecord();
 		Assert.assertTrue(patientDeailsPage.verifyRegisteredPatientName(testData.get("Name")));

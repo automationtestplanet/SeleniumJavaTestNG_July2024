@@ -64,15 +64,12 @@ public class ExcelUtils {
 
 	public static Iterator<Object[]> readHybridDrivenDataFromExcel(String excelFilePath, String sheetName,
 			String methodName) {
-
 		List<Map<String, String>> testData = null;
 		try {
 			FileInputStream fis = new FileInputStream(new File(excelFilePath));
 			XSSFWorkbook workBook = new XSSFWorkbook(fis);
 			XSSFSheet sheet = workBook.getSheet(sheetName);
-
 			testData = getTestDataBySheetAndMethodName(sheet, methodName);
-
 		} catch (Exception e) {
 			System.out.println("Exception Occured while reading Hybrid datat from excel: " + e.getMessage());
 		}
@@ -80,23 +77,18 @@ public class ExcelUtils {
 	}
 
 	public static List<Map<String, String>> getTestDataBySheetAndMethodName(XSSFSheet sheetName, String methodName) {
-
 		List<Map<String, String>> testData = new ArrayList<>();
 		int startRowNo = getStartRow(sheetName, methodName);
 		int endRowNo = getEndRow(startRowNo, sheetName, methodName);
 		List<String> allHeaders = getTestDataHeaders(startRowNo, sheetName);
-
 		for (int i = startRowNo + 2; i < endRowNo; i++) {
 			Map<String, String> testDataMap = new Hashtable<>();
-
 			Row testDataRow = sheetName.getRow(i);
 			Cell cellData;
-
 			for (int j = 0; j < allHeaders.size(); j++) {
 				if (!allHeaders.get(j).equalsIgnoreCase("CELL NOT FOUND")
 						&& !allHeaders.get(j).equalsIgnoreCase("CELL DAA NOT FOUND")) {
 					cellData = testDataRow.getCell(j, MissingCellPolicy.RETURN_NULL_AND_BLANK);
-
 					if (cellData != null) {
 						cellData.setCellType(CellType.STRING);
 					}
@@ -107,7 +99,6 @@ public class ExcelUtils {
 			}
 			testData.add(testDataMap);
 		}
-
 		return testData;
 	}
 
@@ -127,7 +118,6 @@ public class ExcelUtils {
 			System.out.println("Exeption Occured while fetching Start row number of method: " + methodName + " error: "
 					+ e.getMessage());
 		}
-
 		return 0;
 	}
 
@@ -147,14 +137,12 @@ public class ExcelUtils {
 			System.out.println("Exeption Occured while fetching End row number of method: " + methodName + " error: "
 					+ e.getMessage());
 		}
-
 		return startRowNo;
 	}
 
 	public static List<String> getTestDataHeaders(int startRowNo, XSSFSheet sheetName) {
 		List<String> headersList = new ArrayList<>();
 		Row colunNamesRow = sheetName.getRow(startRowNo + 1);
-
 		for (int i = 0; i < colunNamesRow.getLastCellNum(); i++) {
 			Cell dataCell = colunNamesRow.getCell(i, MissingCellPolicy.RETURN_NULL_AND_BLANK);
 			if (dataCell == null) {
@@ -171,11 +159,9 @@ public class ExcelUtils {
 
 	public static Iterator<Object[]> getTestDataIteratorObjectArray(List<Map<String, String>> testData) {
 		List<Object[]> ObjectArrayList = new ArrayList<>();
-
 		for (Map<String, String> eachMap : testData) {
 			ObjectArrayList.add(new Object[] { eachMap });
 		}
 		return ObjectArrayList.iterator();
 	}
-
 }

@@ -9,6 +9,7 @@
       <class name="org.openms.demo.test.OpenMrsHybridFramework">
         <methods>
           <include name="beforeSuite"/>
+          <include name="registerPatientTest" invocation-numbers="0 1 2"/>
           <include name="befoeTest"/>
           <include name="afterClass"/>
           <include name="afterMethod"/>
@@ -16,7 +17,6 @@
           <include name="afterTest"/>
           <include name="beforeClass"/>
           <include name="beforeMethod"/>
-          <include name="findPatientTest" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- org.openms.demo.test.OpenMrsHybridFramework -->
     </classes>

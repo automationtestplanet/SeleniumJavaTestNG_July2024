@@ -7,10 +7,10 @@
 		<classes>
 			<class name="org.openms.demo.test.OpenMrsHybridFramework">
 				<methods>
-					<!--<include name="registerPatientTest" /> -->
+					<!--<include name="registerPatientTest" />-->
 					<include name="findPatientTest" />
-					<!--  <include name="activateVisitsAndAddAttachmentTest" />
-					<include name="deletePatientTest" />-->
+					<!--  <include name="activateVisitsAndAddAttachmentTest" /> -->
+					<!--<include name="deletePatientTest" />-->
 				</methods>
 			</class>
 		</classes>

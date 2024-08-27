@@ -12,6 +12,7 @@ import org.openms.demo.pageobjects.HomePage;
 import org.openms.demo.pageobjects.LoginPage;
 import org.openms.demo.pageobjects.PatientDetailsPage;
 import org.openms.demo.pageobjects.RegistrationPage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -35,6 +36,7 @@ public class OpenMrsBaseTest {
 	public PatientDetailsPage patientDeailsPage;
 	public FindPatientPage findPatientPage;
 	public String patientId;
+	public Commons commons;
 
 	@BeforeSuite(alwaysRun = true)
 	public void beforeSuite() {
@@ -57,6 +59,7 @@ public class OpenMrsBaseTest {
 		registrationPage = new RegistrationPage(driver);
 		patientDeailsPage = new PatientDetailsPage(driver);
 		findPatientPage = new FindPatientPage(driver);
+		commons = new Commons(driver);
 	}
 
 	@BeforeMethod(alwaysRun = true)

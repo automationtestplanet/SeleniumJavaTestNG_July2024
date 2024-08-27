@@ -1,12 +1,13 @@
 package org.openms.demo.pageobjects;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -54,13 +55,23 @@ public class LoginPage extends BasePage{
 //		driver.findElement(By.id("password")).sendKeys(password);
 //		driver.findElement(By.id(moduleName)).click();
 //		driver.findElement(By.cssSelector("input[value='Log In']")).click();
-
-		setUserName(userName);
-		setPassword(password);
-		clickModule(moduleName);
-		clickLoginButton();
+		try {
+			JavascriptExecutor je = (JavascriptExecutor) driver;
+			je.executeScript("window.alert('Please click ok to Continue.............')");
+			Thread.sleep(5000);
+			
+//			Alert alert = driver.switchTo().alert();
+//			alert.accept(); // alert.dismiss();
+			driver.switchTo().alert().accept();
+			setUserName(userName);
+			setPassword(password);
+			clickModule(moduleName);
+			clickLoginButton();
+		} catch (Exception e) {
+			System.out.println("Exception Occured while login to application: "+ e.getMessage());
+		}
 	}
-	
+
 	public boolean verifyLoginPage() {
 		return driver.getTitle().trim().equalsIgnoreCase("Login");
 	}
