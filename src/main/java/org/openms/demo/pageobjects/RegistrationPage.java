@@ -62,12 +62,22 @@ public class RegistrationPage extends BasePage {
 	}
 
 	public void setAddress(String address) {
-		String[] allAddressFields = address.split(",");
-		driver.findElement(By.id("address1")).sendKeys(allAddressFields[0].trim());
-		driver.findElement(By.id("cityVillage")).sendKeys(allAddressFields[1].trim());
-		driver.findElement(By.id("stateProvince")).sendKeys(allAddressFields[2].trim());
-		driver.findElement(By.id("country")).sendKeys(allAddressFields[3].trim());
-		driver.findElement(By.id("postalCode")).sendKeys(allAddressFields[4].trim());
+		try {
+			String[] allAddressFields = address.split(",");
+			driver.findElement(By.id("address1")).sendKeys(allAddressFields[0].trim());
+			Thread.sleep(2000);
+			driver.findElement(By.id("cityVillage")).sendKeys(allAddressFields[1].trim());
+			Thread.sleep(2000);
+			driver.findElement(By.id("stateProvince")).sendKeys(allAddressFields[2].trim());
+			Thread.sleep(2000);
+			driver.findElement(By.id("country")).sendKeys(allAddressFields[3].trim());
+			Thread.sleep(2000);
+			driver.findElement(By.id("postalCode")).sendKeys(allAddressFields[4].trim());
+			Thread.sleep(2000);
+		} catch (Exception e) {
+			System.out.println("Exception Occured while setting name, gender, dateofbirth, address and phone number: "
+					+ e.getMessage());
+		}
 	}
 
 	public void setPhoneNumber(String phoneNumer) {

@@ -6,19 +6,21 @@
     <parameter name="Module" value="Registration Desk"/>
     <parameter name="Password" value="Admin123"/>
     <classes>
-      <class name="org.openms.demo.test.OpenMrsHybridFramework">
+      <class name="org.openmrs.demo.bdd.testrunner.BddTestNGTestRunner">
         <methods>
-          <include name="beforeSuite"/>
-          <include name="registerPatientTest" invocation-numbers="0 1 2"/>
-          <include name="befoeTest"/>
-          <include name="afterClass"/>
-          <include name="afterMethod"/>
-          <include name="afterSuite"/>
+          <include name="beforeMethod"/>
+          <include name="setUpClass"/>
           <include name="afterTest"/>
           <include name="beforeClass"/>
-          <include name="beforeMethod"/>
+          <include name="runScenario" invocation-numbers="0 1 2"/>
+          <include name="tearDownClass"/>
+          <include name="afterSuite"/>
+          <include name="afterMethod"/>
+          <include name="befoeTest"/>
+          <include name="afterClass"/>
+          <include name="beforeSuite"/>
         </methods>
-      </class> <!-- org.openms.demo.test.OpenMrsHybridFramework -->
+      </class> <!-- org.openmrs.demo.bdd.testrunner.BddTestNGTestRunner -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
